@@ -25,19 +25,13 @@ var x = 0;
 var y = 0;
 var c = 0; //c<10
 
-fill(255,192,203);
-triangle(0,0, 90,0, 0,y+90);
-fill(135,206,235);
-triangle(0,0, 60,0, 0,y+60);
 fill(189,252,210);
-triangle(0,0, 30,0, 0,y+30);
+triangle(0,0, x+30,0, 0,y+30);
+fill(135,206,235);
+triangle(0,0, x+20,0, 0,y+20);
+fill(255,192,203);
+triangle(0,0, x+10,0, 0,y+10);
 
-
-stroke(0);
-line(0,0,0,y);
-line(30,0,0,y+30);
-line(60,0,0,y+60);
-line(90,0,0,y+90);
 //backgrounds 
 
 fill(255);
@@ -268,16 +262,16 @@ ellipse(x+103,74,3,3);
 //nose
 
 stroke(0);
+noFill();
 beginShape();
 curveVertex(x+70,100);
 curveVertex(x+70,100);
 curveVertex(x+55,130);
-curveVertex(x+75,153);
-curveVertex(x+100,160);
-curveVertex(x+125,153);
-curveVertex(x+145,130);
-curveVertex(x+130,100);
-curveVertex(x+130,100);
+curveVertex(x+100,120);
+curveVertex(x+120,130);
+curveVertex(x+80,150);
+curveVertex(x+120,160);
+curveVertex(x+120,160);
 endShape();
 //neck
 
@@ -294,6 +288,63 @@ ellipse(x+82,53,2,2);
 ellipse(x+116,53,2,2);
 //eyes light
 
+fill(0);
+ellipse(120,151,20,20);
+
+stroke(255);
+noFill();
+beginShape();
+curveVertex(120,141);
+curveVertex(120,141);
+curveVertex(117,147);
+curveVertex(117,155);
+curveVertex(120,161);
+curveVertex(120,161);
+endShape();
+
+beginShape();
+curveVertex(116,141);
+curveVertex(116,141);
+curveVertex(113,147);
+curveVertex(113,155);
+curveVertex(116,161);
+curveVertex(116,161);
+endShape();
+
+beginShape();
+curveVertex(124,141);
+curveVertex(124,141);
+curveVertex(121,147);
+curveVertex(121,155);
+curveVertex(124,161);
+curveVertex(124,161);
+endShape();
+
+beginShape();
+curveVertex(128,141);
+curveVertex(128,141);
+curveVertex(125,147);
+curveVertex(125,155);
+curveVertex(128,161);
+curveVertex(128,161);
+endShape();
+
+stroke(0);
+beginShape();
+curveVertex(128,157);
+curveVertex(128,157);
+curveVertex(135,157);
+curveVertex(140,160);
+curveVertex(140,165);
+curveVertex(124,160);
+curveVertex(124,160);
+endShape();
+
+stroke(0);
+fill(0,random(255,222),255);
+ellipse(125,160,5,5);
+//end
+
 stroke(0);
 fill(255,random(255,222),0);
 ellipse(x,15,30,30);
@@ -303,9 +354,6 @@ ellipse(180,x+20,5,5);
 ellipse(20,x+20,5,5);
 
 fill(0,random(255,222),255);
-ellipse(x+135,y+150,50,50);
-ellipse(x+129,y+145,30,30);
-ellipse(x+125,y+143,10,10);
 ellipse(80,x*5,5,5);
 ellipse(30,y+35,5,5);
 
@@ -313,6 +361,7 @@ fill(0,random(255,222),0);
 ellipse(160,c*8,c+6,c+6);
 ellipse(70,c*20,10,10);
 //balls
+
 
 }
 
