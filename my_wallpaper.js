@@ -5,6 +5,12 @@ let rect_height = 20;
 let dogS = 1;
 let dogXpots = 0;
 let dogYpots = 0;
+let boneS = 1;
+let boneXpots = 0;
+let boneYpots = -50;
+let ballS = 1;
+let ballXpots = 0;
+let ballYpots = 0;
 
 
 function setup_wallpaper(pWallpaper) {
@@ -33,26 +39,20 @@ fill(255,192,203);
 triangle(0,0, 10,0, 0,10);
 //traingle
 
+fill(random(0,255),random(255,222),random(0,255));
+ellipse(180,100,5,5);
+ellipse(20,100,5,5);
+ellipse(80,85,5,5);
+ellipse(30,115,5,5);
+ellipse(160,98,6,6);
+ellipse(70,100,10,10);
+
+
+ball(ballS,ballS,ballXpots,ballYpots);
 dog(dogS,dogS,dogXpots,dogYpots);
+bone(boneS,boneS,boneXpots,boneYpots);
 
-let x=0;
-let c=0;
-stroke(0);
-fill(255,random(255,222),0);
-ellipse(x,15,30,30);
-line(x,0,x+15,15);
-line(x-15,15,x,30);
-ellipse(180,x+20,5,5);
-ellipse(20,x+20,5,5);
 
-fill(0,random(255,222),255);
-ellipse(80,x*5,5,5);
-ellipse(30,x+35,5,5);
-
-fill(0,random(255,222),0);
-ellipse(160,c*8,c+6,c+6);
-ellipse(70,c*20,10,10);
-//balls
 }
 
 
@@ -370,3 +370,43 @@ ellipse(125,160,5,5);
 pop();
 }
 
+function bone(sx, sy, xPos, yPos){
+  push();
+  translate(xPos, yPos);
+  scale(sx, sy);
+fill(255);
+ellipse(135,51,12,12);
+ellipse(135,59,10,10);
+
+beginShape();
+curveVertex(132, 63);
+curveVertex(132, 63);
+curveVertex(115, 59);
+curveVertex(85, 59);
+curveVertex(68, 63);
+curveVertex(68, 47);
+curveVertex(85, 52);
+curveVertex(115, 52);
+curveVertex(132, 46);
+curveVertex(132, 46);
+endShape();
+
+ellipse(65,51,12,12);
+ellipse(66,59,11,11);
+
+noStroke();
+ellipse(70,55,8,13);
+//bone
+}
+
+function ball(sx, sy, xPos, yPos){
+  push();
+  translate(xPos, yPos);
+  scale(sx, sy);
+stroke(0);
+fill(255,225,0);
+ellipse(0,15,30,30);
+line(0,0,15,15);
+line(-15,15,0,30);
+//balls
+}
