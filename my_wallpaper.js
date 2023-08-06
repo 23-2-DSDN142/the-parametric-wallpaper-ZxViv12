@@ -2,17 +2,17 @@
 let rect_width  = 20;
 let rect_height = 20;
 
-let dogS = 1;
+let dogS = 1; //dog size, dog is on line 62-400
 let dogXpots = 0;
 let dogYpots = 0;
-let boneS = 1;
+let boneS = 1; //bone size, bone is on line 402-429
 let boneXpots = 0;
 let boneYpots = -50;
-let ballS = 1;
+let ballS = 1; //ball & dog & bone size, ball is on 431-441
 let ballXpots = 0;
 let ballYpots = 0;
-let colour = 'A';
-let BallC = 'B';
+let colour = 'C'; //line 64-73, A is brown, B is red, C is black
+let BallC = 'C'; //line 328-337, A is pink, B is blue, C is black
 
 
 function setup_wallpaper(pWallpaper) {
@@ -68,12 +68,10 @@ function dog(sx, sy, xPos, yPos){
   else if(colour == 'B'){
     c = color('#802A2A');
   }
-  else{
+  else if(colour == 'C'){
     c = 0;
   }
   
-  
-
   push();
   translate(xPos, yPos);
   scale(sx, sy);
@@ -334,9 +332,10 @@ if (BallC == 'A'){
 else if(BallC == 'B'){
   c2 = color(8,46,84);
 }
-else{
+else if(BallC == 'C'){
   c2 = 0;
 }
+
 fill(c2);
 ellipse(120,151,20,20);
 
@@ -392,10 +391,10 @@ endShape();
 stroke(0);
 
 noFill();
-ellipse(120,151,20,20);
+ellipse(120,151,20,20); //big ball outline
 
 fill(0,230,255);
-ellipse(125,160,5,5);
+ellipse(125,160,5,5); //small ball
 //end dog
 pop();
 }
