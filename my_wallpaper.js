@@ -11,6 +11,8 @@ let boneYpots = -50;
 let ballS = 1;
 let ballXpots = 0;
 let ballYpots = 0;
+let colour = 'A';
+let BallC = 'B';
 
 
 function setup_wallpaper(pWallpaper) {
@@ -39,7 +41,7 @@ fill(255,192,203);
 triangle(0,0, 10,0, 0,10);
 //traingle
 
-fill(random(0,255),random(255,222),random(0,255));
+fill('#BDFCC9');
 ellipse(180,100,5,5);
 ellipse(20,100,5,5);
 ellipse(80,85,5,5);
@@ -58,6 +60,20 @@ bone(boneS,boneS,boneXpots,boneYpots);
 
 
 function dog(sx, sy, xPos, yPos){
+
+  let c;
+  if (colour == 'A'){
+    c = color('#A0522D');
+  }
+  else if(colour == 'B'){
+    c = color('#802A2A');
+  }
+  else{
+    c = 0;
+  }
+  
+  
+
   push();
   translate(xPos, yPos);
   scale(sx, sy);
@@ -66,8 +82,8 @@ fill(255);
 noStroke();
 rect(70,40,60,70);
 
-fill(0);
-stroke(0);
+fill(c);
+stroke(c);
 beginShape();
 curveVertex(90, 40);
 curveVertex(90, 40);
@@ -139,7 +155,7 @@ triangle(80,55, 63,110, 85,88);
 triangle(120,55, 137,110, 115,88);
 //face
 
-stroke(0);
+stroke(c);
 beginShape();
 curveVertex(63, 45);
 curveVertex(63, 45);
@@ -208,7 +224,7 @@ triangle(137,110, 100,110, 115,88)
 triangle(63,110, 100,110, 85,88)
 //neck
 
-fill(0);
+fill(c);
 beginShape();
 curveVertex(87, 28);
 curveVertex(87, 28);
@@ -220,7 +236,7 @@ curveVertex(65, 40);
 curveVertex(65, 40);
 endShape();
 
-fill(0);
+
 beginShape();
 curveVertex(113, 28);
 curveVertex(113, 28);
@@ -311,7 +327,17 @@ ellipse(82,53,2,2);
 ellipse(116,53,2,2);
 //eyes light
 
-fill(0);
+let c2;
+if (BallC == 'A'){
+  c2 = color(255,102,255);
+}
+else if(BallC == 'B'){
+  c2 = color(8,46,84);
+}
+else{
+  c2 = 0;
+}
+fill(c2);
 ellipse(120,151,20,20);
 
 stroke(255);
@@ -364,7 +390,11 @@ curveVertex(124,160);
 endShape();
 
 stroke(0);
-fill(0,random(255,222),255);
+
+noFill();
+ellipse(120,151,20,20);
+
+fill(0,230,255);
 ellipse(125,160,5,5);
 //end dog
 pop();
