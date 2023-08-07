@@ -5,19 +5,19 @@ let rect_height = 20;
 let dogS = 1; //dog size, dog is on line 62-400
 let dogXpots = 0;
 let dogYpots = 0;
-let boneS = 1; //bone size, bone is on line 402-429
+let boneS = 1; //bone size, bone is on line 402-430
 let boneXpots = 0;
-let boneYpots = -50;
-let ballS = 1; //ball & dog & bone size, ball is on 431-441
-let ballXpots = 0;
-let ballYpots = 0;
+let boneYpots = 100;
+let ballS = 1; //ball & dog & bone size, ball is on 432-443
+let ballXpots = 100;
+let ballYpots = 120;
 let colour = 'C'; //line 64-73, A is brown, B is red, C is black
-let BallC = 'C'; //line 328-337, A is pink, B is blue, C is black
+let BallC = 'A'; //line 328-337, A is pink, B is blue, C is black
 
 
 function setup_wallpaper(pWallpaper) {
-  pWallpaper.output_mode(DEVELOP_GLYPH);
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  pWallpaper.resolution(NINE_LANDSCAPE);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -50,9 +50,9 @@ ellipse(160,98,6,6);
 ellipse(70,100,10,10);
 
 
-ball(ballS,ballS,ballXpots,ballYpots);
 dog(dogS,dogS,dogXpots,dogYpots);
 bone(boneS,boneS,boneXpots,boneYpots);
+ball(ballS,ballS,ballXpots,ballYpots);
 
 
 }
@@ -425,6 +425,7 @@ ellipse(66,59,11,11);
 
 noStroke();
 ellipse(70,55,8,13);
+pop();
 //bone
 }
 
@@ -437,5 +438,6 @@ fill(255,225,0);
 ellipse(0,15,30,30);
 line(0,0,15,15);
 line(-15,15,0,30);
+pop();
 //balls
 }
