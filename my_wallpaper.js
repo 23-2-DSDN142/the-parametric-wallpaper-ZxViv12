@@ -7,17 +7,17 @@ let dogXpots = 0;
 let dogYpots = 0;
 let boneS = 1; //bone size, bone is on line 402-430
 let boneXpots = 0;
-let boneYpots = 100;
+let boneYpots = 50;
 let ballS = 1; //ball & dog & bone size, ball is on 432-443
-let ballXpots = 100;
-let ballYpots = 120;
+let ballXpots = 0;
+let ballYpots = 0;
 let colour = 'C'; //line 64-73, A is brown, B is red, C is black
-let BallC = 'A'; //line 328-337, A is pink, B is blue, C is black
+let BallC = 'C'; //line 328-337, A is pink, B is blue, C is black
 
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
